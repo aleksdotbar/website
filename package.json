@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@heroicons/vue": "^2.0.18",
     "@nuxt/image-edge": "1.0.0-28059208.2abef1b",
     "@nuxtjs/tailwindcss": "^6.7.0",
     "@tailwindcss/typography": "^0.5.9",

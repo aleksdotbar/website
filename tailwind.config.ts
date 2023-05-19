@@ -10,7 +10,9 @@ export default <Config>{
   ],
   theme: {
     colors: ({ colors }) => ({
+      black: colors.black,
       gray: colors.neutral,
+      transparent: "transparent",
     }),
     extend: {
       fontFamily: {

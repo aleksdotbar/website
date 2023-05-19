@@ -1,5 +1,5 @@
 <template>
-  <Html lang="en" class="h-full bg-gray-950 text-gray-300 antialiased">
+  <Html lang="en" class="h-full bg-black text-gray-200 antialiased">
     <Head>
       <Link rel="preconnect" href="https://fonts.googleapis.com" />
       <Link
@@ -17,43 +17,21 @@
       <Meta property="og:description" content="Full-stack engineer" />
     </Head>
 
-    <Body
-      class="h-full min-w-[20rem] bg-gray-950 bg-gradient-to-tr from-gray-950 via-gray-700/10 to-gray-950 px-6"
-    >
-      <header class="py-4">
-        <nav
-          class="flex items-center justify-between gap-4 font-medium text-gray-400"
-        >
-          <NuxtLink
-            to="/"
-            class="mr-auto text-lg font-bold uppercase tracking-wider transition hover:text-gray-300"
-            active-class="text-gray-300"
-          >
-            AB
-          </NuxtLink>
-          <NuxtLink
-            to="/projects"
-            class="transition hover:text-gray-300"
-            active-class="text-gray-50"
-            >/projects
-          </NuxtLink>
-          <NuxtLink
-            to="/work"
-            class="transition hover:text-gray-300"
-            active-class="text-gray-50"
-            >/work</NuxtLink
-          >
-        </nav>
-      </header>
+    <Body class="h-full min-w-[20rem]">
+      <div
+        class="fixed inset-0 z-[-1] bg-gradient-to-tl from-black via-gray-600/20 to-black"
+      ></div>
 
-      <div class="py-16">
+      <TheHeader />
+
+      <div class="px-6 py-8">
         <NuxtPage
           :transition="{
             mode: 'out-in',
             enterActiveClass: 'transition ease-in-out',
             leaveActiveClass: 'transition ease-in-out',
-            enterFromClass: 'opacity-0 scale-95 blur-sm',
-            leaveToClass: 'opacity-0 scale-95 blur-sm',
+            enterFromClass: 'opacity-0 scale-[.97] blur-sm',
+            leaveToClass: 'opacity-0 scale-[.97] blur-sm',
           }"
         />
       </div>
