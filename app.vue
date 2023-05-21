@@ -12,9 +12,9 @@
         rel="stylesheet"
       />
       <Title>Alexander B</Title>
-      <Meta name="description" content="Full-stack engineer" />
+      <Meta name="description" content="Software engineer" />
       <Meta property="og:title" content="Alexander B" />
-      <Meta property="og:description" content="Full-stack engineer" />
+      <Meta property="og:description" content="Software engineer" />
     </Head>
 
     <Body class="h-full min-w-[20rem]">
