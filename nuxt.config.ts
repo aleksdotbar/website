@@ -9,4 +9,10 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "nuxt-vercel-analytics",
   ],
+  image: {
+    screens: {
+      profile: 400,
+      project: 640,
+    },
+  },
 });

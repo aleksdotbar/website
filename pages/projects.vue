@@ -8,7 +8,8 @@
           <NuxtImg
             src="cineshare.jpg"
             format="webp"
-            height="256"
+            width="640"
+            height="640"
             class="h-64 w-full object-cover object-center"
           />
 
@@ -35,7 +36,8 @@
           <NuxtImg
             src="nva.png"
             format="webp"
-            height="256"
+            width="640"
+            height="640"
             class="h-64 w-full object-cover object-center"
           />
 
