@@ -1,14 +1,14 @@
 <template>
-  <main>
+  <main class="space-y-8">
     <h1 class="text-4xl font-bold">Projects</h1>
 
-    <ul class="mt-8 grid gap-8">
+    <ul class="grid gap-8 sm:grid-cols-2">
       <li>
-        <div class="overflow-hidden rounded-lg border border-gray-400/5">
+        <div class="h-full overflow-hidden rounded-lg border border-gray-400/5">
           <NuxtImg
             src="cineshare.jpg"
             format="webp"
-            class="h-60 w-full object-cover object-center"
+            class="h-64 w-full object-cover object-center"
           />
 
           <div class="space-y-2 p-5">
@@ -22,19 +22,19 @@
             </NuxtLink>
 
             <div class="text-sm text-gray-300">
-              A Telegram bot that allows users to search for and share movies
-              and TV shows in any chat, using inline queries
+              Search for and share movies and TV shows in any Telegram chat,
+              using inline queries
             </div>
           </div>
         </div>
       </li>
 
       <li>
-        <div class="overflow-hidden rounded-lg border border-gray-400/5">
+        <div class="h-full overflow-hidden rounded-lg border border-gray-400/5">
           <NuxtImg
             src="nva.png"
             format="webp"
-            class="h-60 w-full object-cover"
+            class="h-64 w-full object-cover object-center"
           />
 
           <div class="space-y-2 p-5">
@@ -48,8 +48,7 @@
             </NuxtLink>
 
             <div class="text-sm text-gray-300">
-              A Nuxt module that allows developers to easily add Vercel
-              Analytics to their projects
+              Easily add Vercel Analytics to your Nuxt project
             </div>
           </div>
         </div>

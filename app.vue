@@ -24,7 +24,7 @@
 
       <TheHeader />
 
-      <div class="px-6 py-8">
+      <div class="mx-auto max-w-4xl px-6 py-8">
         <NuxtPage
           :transition="{
             mode: 'out-in',

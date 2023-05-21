@@ -5,7 +5,7 @@ const isScrolled = computed(() => scroll.y > 32);
 
 <template>
   <header
-    class="sticky top-0 border-b px-6 py-4"
+    class="sticky top-0 border-b"
     :class="[
       isScrolled
         ? ' border-gray-400/5 backdrop-blur-md'
@@ -13,7 +13,7 @@ const isScrolled = computed(() => scroll.y > 32);
     ]"
   >
     <nav
-      class="flex items-center justify-between gap-4 font-medium text-gray-500"
+      class="mx-auto flex max-w-4xl items-center justify-between gap-4 px-6 py-4 font-medium text-gray-500"
     >
       <NuxtLink
         to="/"

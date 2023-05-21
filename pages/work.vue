@@ -24,7 +24,7 @@ const jobs = [
   <main class="space-y-8">
     <h1 class="text-4xl font-bold">Work</h1>
 
-    <ol class="flex flex-col gap-8">
+    <ol class="grid gap-8">
       <li v-for="({ title, company, start, end }, idx) in jobs" :key="idx">
         <dl class="space-y-3 rounded-lg border border-gray-400/5 p-5">
           <div class="flex items-center gap-1">
@@ -58,8 +58,9 @@ const jobs = [
       </li>
     </ol>
 
-    <div class="text-sm italic text-gray-500">
+    <div class="flex flex-col gap-2 text-sm italic text-gray-500">
       <code>// TODO: add job descriptions</code>
+      <code>// TODO: come up with better desktop layout</code>
     </div>
   </main>
 </template>
