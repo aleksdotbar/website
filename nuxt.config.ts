@@ -15,4 +15,9 @@ export default defineNuxtConfig({
       project: 640,
     },
   },
+  routeRules: {
+    "/*": {
+      prerender: true,
+    },
+  },
 });
