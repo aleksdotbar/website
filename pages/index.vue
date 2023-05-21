@@ -58,6 +58,8 @@ const socials = [
         <NuxtImg
           src="/avatar.jpg"
           format="webp"
+          width="400"
+          height="400"
           class="h-full w-full object-cover object-center"
         />
         <div class="absolute inset-0 bg-gray-950/10"></div>
