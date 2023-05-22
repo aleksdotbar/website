@@ -20,5 +20,13 @@ export default defineNuxtConfig({
       prerender: true,
       isr: true,
     },
+    "/projects": {
+      prerender: true,
+      isr: true,
+    },
+    "/work": {
+      prerender: true,
+      isr: true,
+    },
   },
 });
