@@ -53,7 +53,7 @@ const socials = [
       </div>
 
       <div
-        class="relative w-full max-w-xs overflow-hidden rounded-lg ring ring-gray-900 sm:justify-self-end"
+        class="relative w-full max-w-xs justify-self-center overflow-hidden rounded-lg ring ring-gray-900 sm:justify-self-end"
       >
         <NuxtImg
           src="/avatar.jpg"
