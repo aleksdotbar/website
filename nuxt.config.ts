@@ -24,9 +24,5 @@ export default defineNuxtConfig({
       prerender: true,
       isr: true,
     },
-    "/work": {
-      prerender: true,
-      isr: true,
-    },
   },
 });

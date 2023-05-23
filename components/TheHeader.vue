@@ -28,12 +28,6 @@ const isScrolled = computed(() => scroll.y > 32);
         active-class="text-gray-300"
         >/projects
       </NuxtLink>
-      <NuxtLink
-        to="/work"
-        class="transition hover:text-gray-300"
-        active-class="text-gray-300"
-        >/work</NuxtLink
-      >
     </nav>
   </header>
 </template>

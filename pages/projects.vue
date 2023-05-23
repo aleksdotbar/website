@@ -5,14 +5,6 @@
     <ul class="grid gap-8 sm:grid-cols-2">
       <li>
         <div class="h-full overflow-hidden rounded-lg border border-gray-400/5">
-          <NuxtImg
-            src="cineshare.jpg"
-            format="webp"
-            width="640"
-            height="640"
-            class="h-64 w-full object-cover object-center"
-          />
-
           <div class="space-y-2 p-5">
             <NuxtLink
               to="https://t.me/cinesharebot"
@@ -33,14 +25,6 @@
 
       <li>
         <div class="h-full overflow-hidden rounded-lg border border-gray-400/5">
-          <NuxtImg
-            src="nva.png"
-            format="webp"
-            width="640"
-            height="640"
-            class="h-64 w-full object-cover object-center"
-          />
-
           <div class="space-y-2 p-5">
             <NuxtLink
               to="https://www.npmjs.com/package/nuxt-vercel-analytics"
