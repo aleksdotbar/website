@@ -37,7 +37,7 @@ const socials = [
 
         <p class="max-w-xl">
           Besides technology, I have a keen interest in <b>self-improvement</b>,
-          fitness, <b>nutrition</b>, movies, TV shows, and other usual stuff
+          fitness, <b>health</b>, movies, TV shows, and other usual stuff
         </p>
 
         <div class="flex items-center gap-6">
