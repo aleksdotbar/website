@@ -58,41 +58,55 @@ query {
   }
 }`;
 
-export default defineEventHandler(async () => {
-  const config = useRuntimeConfig();
+export default cachedEventHandler(
+  async () => {
+    const config = useRuntimeConfig();
 
-  // TODO: handle error
-  const {
-    data: { viewer },
-  }: ResponseData = await $fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${config.githubToken}`,
-    },
-    body: { query },
-  }).catch(console.error);
-
-  const repositories = viewer.repositories.nodes
-    .filter((x) => Number(x.stargazerCount) > 10)
-    .map((x) => ({
-      name: x.name,
-      description: x.description,
-      url: x.url,
-      stars: x.stargazerCount,
+    // TODO: handle error
+    const {
+      data: { viewer },
+    }: ResponseData = await $fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.githubToken}`,
+      },
+      body: { query },
+    }).catch(() => ({
+      data: {
+        viewer: {
+          repositories: {
+            nodes: [],
+            contributionsCollection: {
+              pullRequestContributionsByRepository: [],
+            },
+          },
+        },
+      },
     }));
 
-  const contributions =
-    viewer.contributionsCollection.pullRequestContributionsByRepository
-      .filter((x) => x.repository.visibility === "PUBLIC")
+    const repositories = viewer.repositories.nodes
+      .filter((x) => Number(x.stargazerCount) > 10)
       .map((x) => ({
-        name: x.repository.nameWithOwner,
-        description: x.repository.description,
-        url: x.repository.url,
-        prs: x.contributions.totalCount,
+        name: x.name,
+        description: x.description,
+        url: x.url,
+        stars: x.stargazerCount,
       }));
 
-  return {
-    repositories,
-    contributions,
-  };
-});
+    const contributions =
+      viewer.contributionsCollection.pullRequestContributionsByRepository
+        .filter((x) => x.repository.visibility === "PUBLIC")
+        .map((x) => ({
+          name: x.repository.nameWithOwner,
+          description: x.repository.description,
+          url: x.repository.url,
+          prs: x.contributions.totalCount,
+        }));
+
+    return {
+      repositories,
+      contributions,
+    };
+  },
+  { swr: true, maxAge: 86400 }
+);
