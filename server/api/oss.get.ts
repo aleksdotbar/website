@@ -58,55 +58,57 @@ query {
   }
 }`;
 
-export default cachedEventHandler(
-  async () => {
-    const config = useRuntimeConfig();
+export default eventHandler(async (e) => {
+  const config = useRuntimeConfig();
 
-    // TODO: handle error
-    const {
-      data: { viewer },
-    }: ResponseData = await $fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${config.githubToken}`,
-      },
-      body: { query },
-    }).catch(() => ({
-      data: {
-        viewer: {
-          repositories: {
-            nodes: [],
-            contributionsCollection: {
-              pullRequestContributionsByRepository: [],
-            },
+  const {
+    data: { viewer },
+  }: ResponseData = await $fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${config.githubToken}`,
+    },
+    body: { query },
+  }).catch(() => ({
+    data: {
+      viewer: {
+        repositories: {
+          nodes: [],
+          contributionsCollection: {
+            pullRequestContributionsByRepository: [],
           },
         },
       },
+    },
+  }));
+
+  const repositories = viewer.repositories.nodes
+    .filter((x) => Number(x.stargazerCount) > 10)
+    .map((x) => ({
+      name: x.name,
+      description: x.description,
+      url: x.url,
+      stars: x.stargazerCount,
     }));
 
-    const repositories = viewer.repositories.nodes
-      .filter((x) => Number(x.stargazerCount) > 10)
+  const contributions =
+    viewer.contributionsCollection.pullRequestContributionsByRepository
+      .filter((x) => x.repository.visibility === "PUBLIC")
       .map((x) => ({
-        name: x.name,
-        description: x.description,
-        url: x.url,
-        stars: x.stargazerCount,
+        name: x.repository.nameWithOwner,
+        description: x.repository.description,
+        url: x.repository.url,
+        prs: x.contributions.totalCount,
       }));
 
-    const contributions =
-      viewer.contributionsCollection.pullRequestContributionsByRepository
-        .filter((x) => x.repository.visibility === "PUBLIC")
-        .map((x) => ({
-          name: x.repository.nameWithOwner,
-          description: x.repository.description,
-          url: x.repository.url,
-          prs: x.contributions.totalCount,
-        }));
+  setHeader(
+    e,
+    "Cache-Control",
+    "public, s-maxage=2592000, stale-while-revalidate=86400"
+  );
 
-    return {
-      repositories,
-      contributions,
-    };
-  },
-  { swr: true, maxAge: 86400 }
-);
+  return {
+    repositories,
+    contributions,
+  };
+});
