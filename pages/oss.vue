@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data } = await useFetch("/api/oss");
+const { data } = useFetch("/api/oss", { immediate: process.server });
 </script>
 
 <template>

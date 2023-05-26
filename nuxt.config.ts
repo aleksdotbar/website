@@ -25,7 +25,6 @@ export default defineNuxtConfig({
       prerender: true,
     },
     "/oss": {
-      prerender: true,
       isr: 86400,
     },
   },
