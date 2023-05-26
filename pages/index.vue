@@ -55,12 +55,12 @@ const socials = [
       <div
         class="relative w-full max-w-xs justify-self-center overflow-hidden rounded-lg ring ring-gray-900 sm:justify-self-end"
       >
-        <UnpicImage
+        <NuxtImg
           src="/avatar.jpg"
           alt=""
-          layout="constrained"
-          :width="400"
-          :aspect-ratio="1"
+          width="400"
+          height="400"
+          format="webp"
         />
         <div class="absolute inset-0 bg-gray-950/10"></div>
       </div>

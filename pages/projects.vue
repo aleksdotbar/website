@@ -5,12 +5,12 @@
     <div class="grid gap-8 sm:grid-cols-2">
       <NuxtLink to="https://t.me/cinesharebot" target="_blank">
         <UiCard class="!space-y-0 !p-0">
-          <UnpicImage
+          <NuxtImg
             src="/cineshare.jpg"
             alt="Cinema clapperboard"
-            layout="constrained"
-            :width="640"
-            :aspect-ratio="1"
+            width="640"
+            height="640"
+            format="webp"
           />
 
           <div class="space-y-2 p-5">
