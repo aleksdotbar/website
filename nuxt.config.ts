@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
     "@nuxt/image-edge",
@@ -9,6 +8,9 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "nuxt-vercel-analytics",
   ],
+  runtimeConfig: {
+    githubToken: "",
+  },
   image: {
     screens: {
       profile: 400,
@@ -18,11 +20,12 @@ export default defineNuxtConfig({
   routeRules: {
     "/": {
       prerender: true,
-      isr: true,
     },
     "/projects": {
       prerender: true,
-      isr: true,
+    },
+    "/oss": {
+      isr: 86400,
     },
   },
 });

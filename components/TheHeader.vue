@@ -1,6 +1,16 @@
 <script setup lang="ts">
-const scroll = reactive(useWindowScroll());
-const isScrolled = computed(() => scroll.y > 32);
+const { y } = useWindowScroll();
+const isScrolled = computed(() => y.value > 32);
+const links = [
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "OSS",
+    path: "/oss",
+  },
+];
 </script>
 
 <template>
@@ -13,20 +23,23 @@ const isScrolled = computed(() => scroll.y > 32);
     ]"
   >
     <nav
-      class="mx-auto flex max-w-4xl items-center justify-between gap-4 px-6 py-4 font-medium text-gray-500"
+      class="mx-auto flex max-w-4xl items-center justify-between gap-6 px-6 py-4 font-medium text-gray-400"
     >
       <NuxtLink
         to="/"
-        class="mr-auto text-lg font-bold uppercase tracking-wider transition hover:text-gray-300"
-        active-class="text-gray-300"
+        class="mr-auto text-lg font-bold uppercase tracking-wider transition hover:text-gray-200"
+        active-class="text-gray-200"
       >
         AB
       </NuxtLink>
+
       <NuxtLink
-        to="/projects"
-        class="transition hover:text-gray-300"
-        active-class="text-gray-300"
-        >/projects
+        v-for="link in links"
+        :key="link.path"
+        :to="link.path"
+        class="transition hover:text-gray-200"
+        active-class="text-gray-200"
+        >{{ link.name }}
       </NuxtLink>
     </nav>
   </header>

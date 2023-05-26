@@ -24,14 +24,14 @@
 
       <TheHeader />
 
-      <div class="mx-auto max-w-4xl px-6 py-8 sm:py-16">
+      <div class="mx-auto max-w-4xl px-6 py-8 sm:py-20">
         <NuxtPage
           :transition="{
             mode: 'out-in',
             enterActiveClass: 'transition ease-in-out',
             leaveActiveClass: 'transition ease-in-out',
-            enterFromClass: 'opacity-0 scale-[.97] blur-sm',
-            leaveToClass: 'opacity-0 scale-[.97] blur-sm',
+            enterFromClass: 'opacity-0 blur-sm',
+            leaveToClass: 'opacity-0 blur-sm',
           }"
         />
       </div>
