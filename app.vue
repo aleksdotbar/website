@@ -22,6 +22,8 @@
         class="fixed inset-0 z-[-1] bg-gradient-to-tl from-black via-gray-600/20 to-black"
       ></div>
 
+      <NuxtLoadingIndicator />
+
       <TheHeader />
 
       <div class="mx-auto max-w-4xl px-6 py-8 sm:py-20">
