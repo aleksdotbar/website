@@ -17,16 +17,4 @@ export default defineNuxtConfig({
       project: 640,
     },
   },
-  routeRules: {
-    "/": {
-      prerender: true,
-    },
-    "/projects": {
-      prerender: true,
-    },
-    "/oss": {
-      prerender: true,
-      isr: 86400,
-    },
-  },
 });
