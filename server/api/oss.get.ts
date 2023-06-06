@@ -101,12 +101,6 @@ export default eventHandler(async (e) => {
         prs: x.contributions.totalCount,
       }));
 
-  setHeader(
-    e,
-    "Cache-Control",
-    "public, s-maxage=2592000, stale-while-revalidate=86400"
-  );
-
   return {
     repositories,
     contributions,
