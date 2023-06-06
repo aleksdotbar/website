@@ -24,9 +24,7 @@ const socials = [
 </script>
 
 <template>
-  <main class="space-y-8">
-    <h1 class="text-4xl font-bold">Hello there 👋</h1>
-
+  <PageContainer title="Hello there 👋">
     <div class="grid gap-8 sm:grid-cols-2">
       <div class="space-y-8">
         <p class="max-w-xl">
@@ -59,5 +57,5 @@ const socials = [
         <div class="absolute inset-0 bg-gray-950/10"></div>
       </div>
     </div>
-  </main>
+  </PageContainer>
 </template>

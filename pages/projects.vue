@@ -15,9 +15,7 @@ const projects = [
 </script>
 
 <template>
-  <main class="space-y-8">
-    <h1 class="text-4xl font-bold">Projects</h1>
-
+  <PageContainer title="Projects">
     <div class="grid gap-8 sm:grid-cols-2">
       <NuxtLink v-for="p in projects" :key="p.name" :to="p.url" target="_blank">
         <UiCard>
@@ -29,5 +27,5 @@ const projects = [
         </UiCard>
       </NuxtLink>
     </div>
-  </main>
+  </PageContainer>
 </template>

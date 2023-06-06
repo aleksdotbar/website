@@ -3,9 +3,7 @@ const { data } = await useFetch("/api/oss");
 </script>
 
 <template>
-  <main class="space-y-8">
-    <h1 class="text-4xl font-bold">My open-source journey</h1>
-
+  <PageContainer title="My open-source journey">
     <div class="grid gap-4 sm:grid-cols-2">
       <div
         v-for="chunk in chunks(data?.repositories ?? [], 2)"
@@ -69,5 +67,5 @@ const { data } = await useFetch("/api/oss");
         </NuxtLink>
       </div>
     </div>
-  </main>
+  </PageContainer>
 </template>
