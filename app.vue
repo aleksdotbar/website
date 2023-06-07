@@ -1,16 +1,6 @@
 <template>
   <Html lang="en" class="h-full bg-black text-gray-200 antialiased">
     <Head>
-      <Link rel="preconnect" href="https://fonts.googleapis.com" />
-      <Link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin="anonymous"
-      />
-      <Link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
       <Title>Alexander B</Title>
       <Meta name="description" content="Software engineer" />
       <Meta property="og:title" content="Alexander B" />

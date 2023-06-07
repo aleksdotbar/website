@@ -7,14 +7,15 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "nuxt-headlessui",
     "nuxt-vercel-analytics",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/fontaine",
   ],
   runtimeConfig: {
     githubToken: "",
   },
-  image: {
-    screens: {
-      profile: 400,
-      project: 640,
+  googleFonts: {
+    families: {
+      Poppins: true,
     },
   },
 });

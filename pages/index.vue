@@ -21,10 +21,26 @@ const socials = [
     icon: "lucide:twitter",
   },
 ];
+
+const shouldAnimate = useState("should-animate", () => true);
+
+onUnmounted(() => {
+  shouldAnimate.value = false;
+});
 </script>
 
 <template>
-  <PageContainer title="Hello there 👋">
+  <PageContainer>
+    <template #title>
+      Hello there
+      <span
+        :class="
+          shouldAnimate && 'inline-block origin-bottom-right animate-wave'
+        "
+        >👋</span
+      >
+    </template>
+
     <div class="grid gap-8 sm:grid-cols-2">
       <div class="space-y-8">
         <p class="max-w-xl">
