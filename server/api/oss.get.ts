@@ -83,7 +83,7 @@ export default eventHandler(async (e) => {
   }));
 
   const repositories = viewer.repositories.nodes
-    .filter((x) => Number(x.stargazerCount) > 10)
+    .filter((x) => Number(x.stargazerCount) > 5)
     .map((x) => ({
       name: x.name,
       description: x.description,
