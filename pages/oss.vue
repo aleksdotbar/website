@@ -6,11 +6,11 @@ const { data } = await useFetch("/api/oss");
   <PageContainer title="My open-source journey">
     <div class="grid gap-4 sm:grid-cols-2">
       <div
-        v-for="chunk in chunks(data?.repositories ?? [], 2)"
-        class="grid gap-4"
+        v-for="half in halfArray(data?.repositories ?? [])"
+        class="flex flex-col gap-4"
       >
         <NuxtLink
-          v-for="(r, idx) in chunk"
+          v-for="(r, idx) in half"
           :key="idx"
           :to="r.url"
           target="_blank"
@@ -39,11 +39,11 @@ const { data } = await useFetch("/api/oss");
 
     <div class="grid gap-4 sm:grid-cols-2">
       <div
-        v-for="chunk in chunks(data?.contributions ?? [], 2)"
-        class="grid gap-4"
+        v-for="half in halfArray(data?.contributions ?? [])"
+        class="flex flex-col gap-4"
       >
         <NuxtLink
-          v-for="(r, idx) in chunk"
+          v-for="(r, idx) in half"
           :key="idx"
           :to="r.url"
           target="_blank"
