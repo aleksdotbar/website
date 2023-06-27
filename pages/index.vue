@@ -69,7 +69,7 @@ onUnmounted(() => {
       <div
         class="relative w-full max-w-xs justify-self-center overflow-hidden rounded-lg ring ring-gray-900 sm:justify-self-end"
       >
-        <img src="/avatar.jpg" alt="" width="400" height="400" />
+        <img src="/avatar.webp" alt="" width="400" height="400" />
         <div class="absolute inset-0 bg-gray-950/10"></div>
       </div>
     </div>
