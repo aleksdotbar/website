@@ -16,6 +16,9 @@ type ResponseData = {
             description: string;
             url: string;
             visibility: "PUBLIC" | "PRIVATE";
+            owner: {
+              login: string;
+            };
           };
           contributions: {
             totalCount: number;
@@ -49,6 +52,9 @@ query {
           description
           url
           visibility
+          owner {
+            login
+          }
         }
         contributions(orderBy: {direction: DESC}) {
           totalCount
@@ -63,24 +69,13 @@ export default eventHandler(async (e) => {
 
   const {
     data: { viewer },
-  }: ResponseData = await $fetch("https://api.github.com/graphql", {
+  } = await $fetch<ResponseData>("https://api.github.com/graphql", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${config.githubToken}`,
     },
     body: { query },
-  }).catch(() => ({
-    data: {
-      viewer: {
-        repositories: {
-          nodes: [],
-          contributionsCollection: {
-            pullRequestContributionsByRepository: [],
-          },
-        },
-      },
-    },
-  }));
+  });
 
   const repositories = viewer.repositories.nodes
     .filter((x) => Number(x.stargazerCount) > 5)
@@ -93,7 +88,11 @@ export default eventHandler(async (e) => {
 
   const contributions =
     viewer.contributionsCollection.pullRequestContributionsByRepository
-      .filter((x) => x.repository.visibility === "PUBLIC")
+      .filter(
+        (x) =>
+          x.repository.visibility === "PUBLIC" &&
+          x.repository.owner.login !== "xanderbarkhatov"
+      )
       .map((x) => ({
         name: x.repository.nameWithOwner,
         description: x.repository.description,
