@@ -18,6 +18,5 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/**': { isr: true },
-    '/': { prerender: true },
   },
 });
