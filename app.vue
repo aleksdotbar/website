@@ -1,10 +1,10 @@
 <template>
   <Html lang="en" class="h-full bg-black text-gray-200 antialiased">
     <Head>
-      <Title>Alexander B</Title>
-      <Meta name="description" content="Software engineer" />
-      <Meta property="og:title" content="Alexander B" />
-      <Meta property="og:description" content="Software engineer" />
+      <Title>Alexander Barkhatov</Title>
+      <Meta name="description" content="Software Engineer" />
+      <Meta property="og:title" content="Alexander Barkhatov" />
+      <Meta property="og:description" content="Software Engineer" />
     </Head>
 
     <Body class="h-full min-w-[20rem]">
