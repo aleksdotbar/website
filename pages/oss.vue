@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { data } = await useFetch("/api/oss");
+// const { data } = await useFetch("/api/oss");
+const data = {} as any
 </script>
 
 <template>
