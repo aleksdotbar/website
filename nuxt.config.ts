@@ -16,8 +16,4 @@ export default defineNuxtConfig({
       Poppins: true,
     },
   },
-  routeRules: {
-    '/**': { isr: true },
-    '/projects': { prerender: true },
-  },
 });
