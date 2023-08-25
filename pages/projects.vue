@@ -3,13 +3,13 @@ const projects = [
   {
     name: "CineShare",
     description:
-      "Find and share movies and TV shows in any Telegram chat, using inline queries",
+      "Telegram bot for searching and sharing movies and TV shows in any chat",
     url: "https://t.me/cinesharebot",
   },
   {
     name: "Emoji Search",
     description: "AI-powered emoji search",
-    url: "https://emojisearch.xanderbarkhatov.com/",
+    url: "https://emojisearch.xanderbarkhatov.com",
   },
   {
     name: "Tic-Tac-Toe",
