@@ -18,5 +18,6 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/**': { isr: true },
+    '/projects': { prerender: true },
   },
 });
