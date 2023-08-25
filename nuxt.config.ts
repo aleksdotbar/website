@@ -1,9 +1,7 @@
 export default defineNuxtConfig({
   modules: [
-    "@nuxt/image-edge",
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
-    "@vue-macros/nuxt",
     "nuxt-icon",
     "nuxt-headlessui",
     "nuxt-vercel-analytics",
@@ -18,4 +16,9 @@ export default defineNuxtConfig({
       Poppins: true,
     },
   },
+  routeRules: {
+    '/': { prerender: true },
+    '/projects': { prerender: true },
+    '/oss': { isr: 86400 },
+  }
 });
