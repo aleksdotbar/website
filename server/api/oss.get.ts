@@ -55,6 +55,7 @@ query {
           owner {
             login
           }
+          viewerHasStarred
         }
         contributions(orderBy: {direction: DESC}) {
           totalCount
@@ -91,7 +92,8 @@ export default eventHandler(async (e) => {
       .filter(
         (x) =>
           x.repository.visibility === "PUBLIC" &&
-          x.repository.owner.login !== "xanderbarkhatov"
+          x.repository.owner.login !== "xanderbarkhatov" &&
+          x.repository.viewerHasStarred,
       )
       .map((x) => ({
         name: x.repository.nameWithOwner,
@@ -100,7 +102,7 @@ export default eventHandler(async (e) => {
         prs: x.contributions.totalCount,
       }));
 
-  setHeader(e, 'Cache-Control', 's-maxage=86400, stale-while-revalidate')
+  setHeader(e, "Cache-Control", "s-maxage=86400, stale-while-revalidate");
 
   return {
     repositories,
