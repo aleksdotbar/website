@@ -9,7 +9,7 @@ const projects = [
   {
     name: "Emoji Search",
     description: "AI-powered emoji search",
-    url: "https://emojisearch.xanderbarkhatov.com",
+    url: "https://emojisearch.fun",
   },
   {
     name: "Tic-Tac-Toe",
