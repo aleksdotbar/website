@@ -10,9 +10,6 @@ export default defineConfig({
   adapter: vercel({
     webAnalytics: true,
     imageService: true,
-    imagesConfig: {
-      sizes: [318, 636],
-    },
   }),
   integrations: [tailwind(), qwikdev()],
   vite: {
