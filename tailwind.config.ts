@@ -12,7 +12,7 @@ export default <Config>{
     }),
     extend: {
       fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins, Poppins fallback", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         wave: {
