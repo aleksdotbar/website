@@ -1,0 +1,70 @@
+---
+import SectionContainer from "@/components/section-container.astro";
+import Card from "@/components/card.astro";
+import { getOSSData } from "@/lib/github";
+import { halfArray } from "@/lib/utils";
+
+const { repositories, contributions } = await getOSSData();
+---
+
+<SectionContainer title="Open source journey" id="oss">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      halfArray(repositories).map((half) => (
+        <div class="flex flex-col gap-4">
+          {half.map((x) => (
+            <a href={x.url} target="_blank">
+              <Card>
+                <div class="flex items-center justify-between gap-3">
+                  <h3 title={x.name} class="truncate text-lg font-semibold">
+                    {x.name}
+                  </h3>
+
+                  <div class="flex items-center gap-2 text-xs font-medium text-gray-400">
+                    <span class="i-lucide-star h-4 w-4" />
+                    <span>{x.stars}</span>
+                  </div>
+                </div>
+
+                <div v-if="r.description" class="text-sm text-gray-300">
+                  {x.description}
+                </div>
+              </Card>
+            </a>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+
+  <hr class="border-gray-400/5" />
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      halfArray(contributions).map((half) => (
+        <div class="flex flex-col gap-4">
+          {half.map((x) => (
+            <a href={x.url} target="_blank">
+              <Card>
+                <div class="flex items-center justify-between gap-3">
+                  <h3 title={x.name} class="truncate text-lg font-semibold">
+                    {x.name}
+                  </h3>
+
+                  <div class="flex items-center gap-2 text-xs font-medium text-gray-400">
+                    <span class="i-lucide-git-pull-request h-4 w-4" />
+                    <span>{x.prs}</span>
+                  </div>
+                </div>
+
+                {!!x.description && (
+                  <div class="text-sm text-gray-300">{x.description}</div>
+                )}
+              </Card>
+            </a>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</SectionContainer>

@@ -19,6 +19,7 @@ type ResponseData = {
             owner: {
               login: string;
             };
+            viewerHasStarred: boolean;
           };
           contributions: {
             totalCount: number;
@@ -65,21 +66,21 @@ query {
   }
 }`;
 
-export default eventHandler(async (e) => {
-  const config = useRuntimeConfig();
+const token = import.meta.env.GITHUB_TOKEN;
 
+export const getOSSData = async () => {
   const {
     data: { viewer },
-  } = await $fetch<ResponseData>("https://api.github.com/graphql", {
+  }: ResponseData = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${config.githubToken}`,
+      Authorization: `Bearer ${token}`,
     },
-    body: { query },
-  });
+    body: JSON.stringify({ query }),
+  }).then((x) => x.json());
 
   const repositories = viewer.repositories.nodes
-    .filter((x) => Number(x.stargazerCount) > 5)
+    .filter((x) => Number(x.stargazerCount) > 10)
     .map((x) => ({
       name: x.name,
       description: x.description,
@@ -102,10 +103,5 @@ export default eventHandler(async (e) => {
         prs: x.contributions.totalCount,
       }));
 
-  setHeader(e, "Cache-Control", "s-maxage=86400, stale-while-revalidate");
-
-  return {
-    repositories,
-    contributions,
-  };
-});
+  return { repositories, contributions };
+};

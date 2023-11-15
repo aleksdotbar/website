@@ -1,13 +1,9 @@
-import { Config } from "tailwindcss";
+import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
+import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
 
 export default <Config>{
-  content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./app.vue",
-  ],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     colors: ({ colors }) => ({
       black: colors.black,
@@ -29,4 +25,9 @@ export default <Config>{
       },
     },
   },
+  plugins: [
+    iconsPlugin({
+      collections: getIconCollections(["lucide"]),
+    }),
+  ],
 };

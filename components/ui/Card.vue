@@ -1,7 +1,0 @@
-<template>
-  <div
-    class="space-y-2 overflow-hidden rounded-lg border border-gray-200/5 p-5"
-  >
-    <slot />
-  </div>
-</template>

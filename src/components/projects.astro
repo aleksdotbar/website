@@ -1,0 +1,39 @@
+---
+import Card from "@/components/card.astro";
+import SectionContainer from "@/components/section-container.astro";
+import { halfArray } from "@/lib/utils";
+
+const projects = [
+  {
+    name: "EmojiSearch",
+    description: "AI-powered emoji search",
+    href: "https://emojisearch.fun",
+  },
+  {
+    name: "CineShare",
+    description:
+      "Telegram bot for searching and sharing movies and TV shows in any chat",
+    href: "https://t.me/cinesharebot",
+  },
+];
+---
+
+<SectionContainer title="Projects" id="projects">
+  <div class="grid gap-4 sm:grid-cols-2">
+    {
+      halfArray(projects).map((half) => (
+        <div class="flex flex-col gap-4">
+          {half.map((x) => (
+            <a href={x.href} target="_blank">
+              <Card>
+                <h3 class="text-lg font-semibold">{x.name}</h3>
+
+                <div class="text-sm text-gray-300">{x.description}</div>
+              </Card>
+            </a>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</SectionContainer>

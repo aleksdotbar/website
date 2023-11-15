@@ -1,24 +1,29 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "devDependencies": {
-    "@nuxtjs/fontaine": "^0.4.1",
-    "@nuxtjs/google-fonts": "^3.0.2",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@types/node": "^20.5.6",
-    "@vueuse/nuxt": "^10.3.0",
-    "nuxt": "3.5.3",
-    "nuxt-headlessui": "^1.1.4",
-    "nuxt-icon": "^0.5.0",
-    "nuxt-vercel-analytics": "^0.2.2",
-    "prettier": "^3.0.2",
-    "prettier-plugin-tailwindcss": "^0.5.3"
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/tailwind": "^5.0.2",
+    "@builder.io/qwik": "^1.2.17",
+    "@egoist/tailwindcss-icons": "^1.4.0",
+    "@fontsource/poppins": "^5.0.8",
+    "@iconify-json/lucide": "^1.1.141",
+    "@qwikdev/astro": "^0.1.15",
+    "@vercel/analytics": "^1.1.1",
+    "astro": "^3.5.4",
+    "fontaine": "^0.4.1",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
   }
 }
