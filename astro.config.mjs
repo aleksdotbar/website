@@ -9,7 +9,6 @@ export default defineConfig({
   output: "static",
   adapter: vercel({
     webAnalytics: true,
-    imageService: true,
   }),
   integrations: [tailwind(), qwikdev()],
   vite: {
