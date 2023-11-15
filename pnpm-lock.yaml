@@ -14,9 +14,6 @@ devDependencies:
   '@astrojs/vercel':
     specifier: ^5.2.0
     version: 5.2.0(astro@3.5.4)
-  '@builder.io/qwik':
-    specifier: ^1.2.17
-    version: 1.2.17(undici@5.27.2)
   '@egoist/tailwindcss-icons':
     specifier: ^1.4.0
     version: 1.4.0(tailwindcss@3.3.5)
@@ -26,12 +23,6 @@ devDependencies:
   '@iconify-json/lucide':
     specifier: ^1.1.141
     version: 1.1.141
-  '@qwikdev/astro':
-    specifier: ^0.1.15
-    version: 0.1.15(@builder.io/qwik@1.2.17)
-  '@vercel/analytics':
-    specifier: ^1.1.1
-    version: 1.1.1
   astro:
     specifier: ^3.5.4
     version: 3.5.4(typescript@5.2.2)
@@ -449,26 +440,6 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
-    dev: true
-
-  /@builder.io/qwik@1.2.17(undici@5.27.2):
-    resolution: {integrity: sha512-66fGmPHIy/brJqtrUapxckw9EVAh6U3pcjRr1WiqGGjq1cvgJdP88jayMw85XvckEjrF4ymNLOYCmjdlQNzU+Q==}
-    engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
-    hasBin: true
-    peerDependencies:
-      undici: ^5.14.0
-    dependencies:
-      csstype: 3.1.2
-      undici: 5.27.2
-      vite: 4.5.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - terser
     dev: true
 
   /@capsizecss/metrics@1.2.0:
@@ -908,11 +879,6 @@ packages:
     dev: true
     optional: true
 
-  /@fastify/busboy@2.1.0:
-    resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
-    engines: {node: '>=14'}
-    dev: true
-
   /@fontsource/poppins@5.0.8:
     resolution: {integrity: sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==}
     dev: true
@@ -1007,15 +973,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
-    dev: true
-
-  /@qwikdev/astro@0.1.15(@builder.io/qwik@1.2.17):
-    resolution: {integrity: sha512-f7IVxgPt6Q/F78tt6FazAvllm5bvvpMzkhyKL4iqFaIXGVn+4aLhpGGKXfIxPM1PBQ8vatxeB9MqGnOisZzpwA==}
-    peerDependencies:
-      '@builder.io/qwik': ^1.2.17
-    dependencies:
-      '@builder.io/qwik': 1.2.17(undici@5.27.2)
-      fs-extra: 11.1.1
     dev: true
 
   /@rollup/pluginutils@4.2.1:
@@ -1740,10 +1697,6 @@ packages:
     hasBin: true
     dev: true
 
-  /csstype@3.1.2:
-    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: true
-
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -2136,15 +2089,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /fs-extra@11.1.1:
-    resolution: {integrity: sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==}
-    engines: {node: '>=14.14'}
-    dependencies:
-      graceful-fs: 4.2.11
-      jsonfile: 6.1.0
-      universalify: 2.0.1
-    dev: true
 
   /fs-minipass@2.1.0:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
@@ -2642,14 +2586,6 @@ packages:
 
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
-    dev: true
-
-  /jsonfile@6.1.0:
-    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
-    dependencies:
-      universalify: 2.0.1
-    optionalDependencies:
-      graceful-fs: 4.2.11
     dev: true
 
   /kind-of@6.0.3:
@@ -4512,13 +4448,6 @@ packages:
     resolution: {integrity: sha512-uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==}
     dev: true
 
-  /undici@5.27.2:
-    resolution: {integrity: sha512-iS857PdOEy/y3wlM3yRp+6SNQQ6xU0mmZcwRSriqk+et/cwWAtwmIGf6WkoDN2EK/AMdCO/dfXzIwi+rFMrjjQ==}
-    engines: {node: '>=14.0'}
-    dependencies:
-      '@fastify/busboy': 2.1.0
-    dev: true
-
   /unherit@3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
     dev: true
@@ -4630,11 +4559,6 @@ packages:
       '@types/unist': 3.0.2
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
-    dev: true
-
-  /universalify@2.0.1:
-    resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
-    engines: {node: '>= 10.0.0'}
     dev: true
 
   /unplugin@1.5.0:

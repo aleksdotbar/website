@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/static";
-import qwikdev from "@qwikdev/astro";
 import { FontaineTransform } from "fontaine";
 
 // https://astro.build/config
@@ -10,7 +9,7 @@ export default defineConfig({
   adapter: vercel({
     webAnalytics: true,
   }),
-  integrations: [tailwind(), qwikdev()],
+  integrations: [tailwind()],
   vite: {
     plugins: [
       FontaineTransform.vite({

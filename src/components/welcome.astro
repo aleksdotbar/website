@@ -1,8 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import Card from "@/components/card.astro";
 import SectionContainer from "@/components/section-container.astro";
-import avatar from "@/assets/avatar.webp";
 
 const socials = [
   {
@@ -64,11 +62,11 @@ const socials = [
     <div
       class="relative aspect-square w-full max-w-xs justify-self-center overflow-hidden rounded-lg border border-gray-200/5 md:justify-self-end"
     >
-      <Image
-        src={avatar}
+      <img
+        src="/avatar-2x.webp"
         alt="Photo of me looking at the Christmas lights"
         class="object-contain object-center"
-        widths={[318, 636]}
+        srcset="/avatar-1x.webp 1x, /avatar-2x.webp 2x"
       />
       <div class="absolute inset-0 bg-gray-950/20"></div>
     </div>
