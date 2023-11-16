@@ -1,6 +1,7 @@
 ---
 import Card from "@/components/card.astro";
 import SectionContainer from "@/components/section-container.astro";
+import Spotlight from "@/components/spotlight";
 
 const socials = [
   {
@@ -60,15 +61,17 @@ const socials = [
     </div>
 
     <div
-      class="relative aspect-square w-full max-w-xs justify-self-center overflow-hidden rounded-lg border border-gray-200/5 md:justify-self-end"
+      class="relative aspect-square w-full max-w-xs justify-self-center rounded-lg border border-gray-200/10 md:justify-self-end"
     >
-      <img
-        src="/avatar-2x.webp"
-        alt="Photo of me looking at the Christmas lights"
-        class="object-contain object-center"
-        srcset="/avatar-1x.webp 1x, /avatar-2x.webp 2x"
-      />
-      <div class="absolute inset-0 bg-gray-950/20"></div>
+      <Spotlight>
+        <img
+          src="/avatar-2x.webp"
+          alt="Photo of me looking at the Christmas lights"
+          class="rounded-lg object-contain object-center"
+          srcset="/avatar-1x.webp 1x, /avatar-2x.webp 2x"
+        />
+        <div class="absolute inset-0 bg-gray-950/20"></div>
+      </Spotlight>
     </div>
   </div>
 </SectionContainer>

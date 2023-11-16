@@ -9,6 +9,7 @@ export default <Config>{
       black: colors.black,
       gray: colors.neutral,
       transparent: "transparent",
+      primary: colors.amber,
     }),
     extend: {
       fontFamily: {
