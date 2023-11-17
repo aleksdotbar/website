@@ -12,9 +12,25 @@ import {
 type Point = { x: number; y: number };
 
 const Spotlight = component$(() => {
-  const mouse = useStore<Partial<Point>>({});
-  const rect = useStore<Partial<Point>>({});
   const card = useSignal<HTMLDivElement>();
+
+  const rect = useStore<Partial<Point>>({});
+
+  const setRect = $(() => {
+    const { left, top } = card.value!.getBoundingClientRect();
+    rect.x = left;
+    rect.y = top;
+  });
+
+  useOnWindow(["scroll", "resize"], setRect);
+
+  useVisibleTask$(({ cleanup }) => {
+    const ro = new ResizeObserver(setRect);
+    ro.observe(card.value!);
+    cleanup(() => ro.disconnect());
+  });
+
+  const mouse = useStore<Partial<Point>>({});
 
   useOnWindow(
     "pointermove",
@@ -25,25 +41,6 @@ const Spotlight = component$(() => {
       mouse.y = y;
     }),
   );
-
-  useOnWindow(
-    "scroll",
-    $(() => {
-      const { left, top } = card.value!.getBoundingClientRect();
-      rect.x = left;
-      rect.y = top;
-    }),
-  );
-
-  useVisibleTask$(({ cleanup }) => {
-    const ro = new ResizeObserver(() => {
-      const { left, top } = card.value!.getBoundingClientRect();
-      rect.x = left;
-      rect.y = top;
-    });
-    ro.observe(card.value!);
-    cleanup(() => ro.disconnect());
-  });
 
   const coords = useComputed$(() => ({
     x: mouse.x && rect.x ? mouse.x - rect.x : undefined,
