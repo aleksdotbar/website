@@ -51,7 +51,7 @@ const Spotlight = component$(() => {
   }));
 
   return (
-    <div ref={card} class="relative rounded-lg">
+    <div ref={card} class="relative rounded-lg shadow">
       <div
         style={{
           background:
@@ -62,9 +62,9 @@ const Spotlight = component$(() => {
         class="absolute -inset-px rounded-lg"
       ></div>
 
-      <div class="absolute inset-0 rounded-[7px] bg-gray-950"></div>
+      <div class="absolute inset-0 rounded-[7px] bg-gradient-to-tl from-black via-gray-950 to-black"></div>
 
-      <div class="relative overflow-hidden">
+      <div class="relative">
         <Slot />
       </div>
     </div>
