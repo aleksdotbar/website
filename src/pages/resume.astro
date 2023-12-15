@@ -138,7 +138,7 @@ const projects = [
 ];
 ---
 
-<html lang="en" class="bg-gray-100 antialiased print:bg-white">
+<html lang="en" class="bg-gray-50 antialiased print:bg-white md:bg-gray-100">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -148,20 +148,20 @@ const projects = [
     <meta property="og:description" content="Software Engineer" />
     <title>Alexander Barkhatov</title>
   </head>
-  <body class="py-10 font-sans print:py-0">
+  <body class="p-4 font-sans print:py-0 md:py-10">
     <Analytics />
 
     <a
       href="/files/Resume - Alexander Barkhatov.pdf"
       download="Resume - Alexander Barkhatov.pdf"
-      class="fixed right-5 top-5 flex items-center gap-2 rounded bg-gray-800 px-4 py-2 text-white shadow-lg transition hover:bg-gray-700 print:hidden"
+      class="fixed right-5 top-5 flex items-center gap-2 rounded bg-gray-800 px-2 py-2 text-white shadow-lg transition hover:bg-gray-700 print:hidden md:px-4"
     >
       <span class="i-lucide-download"></span>
-      <span>Download PDF</span>
+      <span class="hidden md:block">Download PDF</span>
     </a>
 
     <main
-      class="prose prose-sm mx-auto grid max-w-[900px] grid-cols-3 gap-x-2 gap-y-5 rounded bg-gray-50 p-10 shadow prose-headings:m-0 prose-h3:text-base prose-p:m-0 prose-ul:mb-0 print:bg-white print:p-0 print:shadow-none"
+      class="prose prose-sm mx-auto grid max-w-[900px] grid-cols-1 gap-x-2 gap-y-5 rounded bg-gray-50 prose-headings:m-0 prose-h3:text-base prose-p:m-0 prose-ul:mb-0 print:bg-white print:p-0 print:shadow-none md:grid-cols-3 md:p-10 md:shadow"
     >
       <div class="col-span-2">
         <h1>Alexander Barkhatov</h1>
