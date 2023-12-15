@@ -8,6 +8,11 @@ const links = [
     label: "OSS",
     href: "#oss",
   },
+  {
+    label: "Resume",
+    href: "/resume",
+    blank: true,
+  },
 ];
 ---
 
@@ -26,7 +31,11 @@ const links = [
 
     {
       links.map((x) => (
-        <a href={x.href} class="transition hover:text-gray-200">
+        <a
+          href={x.href}
+          target={x.blank ? "_blank" : undefined}
+          class="transition hover:text-gray-200"
+        >
           {x.label}
         </a>
       ))

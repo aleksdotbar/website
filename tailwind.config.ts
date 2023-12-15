@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
+import typography from "@tailwindcss/typography";
 
 export default <Config>{
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -10,6 +11,9 @@ export default <Config>{
       gray: colors.neutral,
       transparent: "transparent",
       primary: colors.amber,
+      white: colors.white,
+      blue: colors.sky,
+      current: "currentColor",
     }),
     extend: {
       fontFamily: {
@@ -30,5 +34,6 @@ export default <Config>{
     iconsPlugin({
       collections: getIconCollections(["lucide"]),
     }),
+    typography,
   ],
 };

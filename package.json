@@ -17,6 +17,7 @@
     "@fontsource/poppins": "^5.0.8",
     "@iconify-json/lucide": "^1.1.141",
     "@qwikdev/astro": "^0.1.16",
+    "@tailwindcss/typography": "^0.5.10",
     "@vercel/analytics": "^1.1.1",
     "astro": "^3.5.4",
     "fontaine": "^0.4.1",

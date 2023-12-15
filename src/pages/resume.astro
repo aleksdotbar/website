@@ -1,0 +1,277 @@
+---
+import Analytics from "@/components/analytics.astro";
+import ResumeSection from "@/components/resume-section.astro";
+import "@fontsource/poppins";
+
+const socials = [
+  {
+    href: "mailto:mail@xanderbarkhatov.com",
+    label: "mail@xanderbarkhatov.com",
+    iconClass: "i-lucide-mail",
+  },
+  {
+    href: "https://xanderbarkhatov.com",
+    label: "xanderbarkhatov.com",
+    iconClass: "i-lucide-globe",
+  },
+  {
+    href: "https://linkedin.com/in/xanderbarkhatov",
+    label: "in/xanderbarkhatov",
+    iconClass: "i-lucide-linkedin",
+  },
+  {
+    href: "https://twitter.com/xanderbarkhatov",
+    label: "@xanderbarkhatov",
+    iconClass: "i-lucide-twitter",
+  },
+  {
+    href: "https://github.com/xanderbarkhatov",
+    label: "xanderbarkhatov",
+    iconClass: "i-lucide-github",
+  },
+];
+
+const jobs = [
+  {
+    company: "Uzum Technologies",
+    position: "Frontend Engineer",
+    date: ["August 2017", "August 2018"],
+    achievements: [
+      "Developing internal applications.",
+      "Participating in sprint planning and code reviews.",
+      "Migrated the project from Webpack 4 and Node 14 to Webpack 5 and Node 18, speeding up deployments.",
+      "Integrated and configured Tailwind CSS, speeding up the development of new features.",
+      "Integrated and configured Flagsmith, simplifying feature flags management.",
+    ],
+  },
+  {
+    company: "BirdsBuild",
+    position: "Frontend Engineer",
+    date: ["August 2017", "August 2018"],
+    achievements: [
+      "Played a key role in building a B2B marketplace.",
+      "Lead the development of an admin app for the marketplace, optimizing internal processes.",
+      "Lead the migration from JavaScript to TypeScript.",
+      "Lead the migration from Vue 3 to Nuxt 3, improving application performance and SEO.",
+      "Lead the development of a landing page using Nuxt 3, contributing to user acquisition.",
+      "Actively contributed to the project's architecture and structure, ensuring it was well-organized, effective, and scalable.",
+      "Contributed to UI Kit development, improving design consistency and frontend efficiency.",
+      "Researched and incorporated Storybook for UI Kit, facilitating component testing and documentation.",
+      "Contributed to performance optimizations and SEO.",
+      "Configured and managed essential tools (Webpack, Vite, Eslint, Stylelint, Prettier, etc.).",
+      "Managed the GitLab repository and CI/CD workflows.",
+      "Participated in code reviews and mentored junior developers.",
+    ],
+  },
+  {
+    company: "Rosneft",
+    position: "Software Engineer",
+    date: ["August 2017", "August 2018"],
+    achievements: [
+      "Developed an immersive virtual tour of the company's building using JavaScript, Pannellum and Bootstrap, enhancing the online visitor experience and showcasing the physical infrastructure.",
+      "Collaborated on the creation of an internal process automation tool, streamlining routine tasks and reducing manual effort across departments.",
+      "Automated workflows for users from various departments, resulting in improved operational efficiency and reduced turnaround times.",
+    ],
+  },
+];
+
+const skills = [
+  "JavaScript & TypeScript",
+  "Vue.js & Nuxt",
+  "React & Next.js",
+  "HTML & CSS",
+  "Sass, PostCSS & Tailwind CSS",
+  "REST, GraphQL & WebSockets",
+  "Node.js & Deno",
+  "SQL, NoSQL & Redis",
+  "Webpack & Vite",
+  "Jest & Playwright",
+  "Docker & Kubernetes",
+  "Git, GitHub & GitLab",
+  "Testing & Debugging",
+  "Performance Optimization",
+  "CI/CD",
+  "UI/UX Design",
+];
+
+const languages = ["English", "Russian"];
+
+const courses = [
+  {
+    title: "React.gg by ui.dev",
+    date: "November 2023",
+  },
+  {
+    title: "Official Vue.js Certification by Vue School & Vue.js",
+    date: "October 2023",
+  },
+  {
+    title: "React - The Full Course by fireship.io",
+    date: "October 2023",
+  },
+  {
+    title: "Mastering Nuxt by Vue School",
+    date: "November 2022",
+  },
+];
+
+const projects = [
+  {
+    title: "emojisearch.fun",
+    href: "https://emojisearch.fun",
+    description: "AI-powered emoji search.",
+    stack: "TypeScript, Vue.js, Nuxt, Tailwind CSS, Redis & OpenAI API",
+  },
+  {
+    title: "t.me/cinesharebot",
+    href: "https://t.me/cinesharebot",
+    description:
+      "Telegram bot for searching and sharing movies and shows in any chat.",
+    stack: "TypeScript & Node.js",
+  },
+  {
+    title: "xanderbarkhatov.com",
+    href: "https://xanderbarkhatov.com",
+    description: "My personal website.",
+    stack: "TypeScript, Astro, Tailwind CSS",
+  },
+];
+---
+
+<html lang="en" class="bg-gray-100 antialiased print:bg-white">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Software Engineer" />
+    <meta property="og:title" content="Alexander Barkhatov" />
+    <meta property="og:description" content="Software Engineer" />
+    <title>Alexander Barkhatov</title>
+  </head>
+  <body class="py-10 font-sans print:py-0">
+    <Analytics />
+
+    <a
+      href="/files/resume.pdf"
+      download="Resume - Alexander Barkhatov.pdf"
+      class="fixed right-5 top-5 flex items-center gap-2 rounded bg-gray-800 px-4 py-2 text-white shadow-lg transition hover:bg-gray-700 print:hidden"
+    >
+      <span class="i-lucide-download"></span>
+      <span>Download PDF</span>
+    </a>
+
+    <main
+      class="prose prose-sm mx-auto grid max-w-[900px] grid-cols-3 gap-x-3 gap-y-5 rounded bg-gray-50 p-10 shadow prose-headings:m-0 prose-h3:text-base prose-p:m-0 prose-ul:mb-0 print:bg-white print:p-0 print:shadow-none"
+    >
+      <div class="col-span-2">
+        <h1>Alexander Barkhatov</h1>
+        <p>Software Engineer with over 4 years of experience</p>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        {
+          socials.map((social) => (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-sm no-underline"
+            >
+              <span class:list={[social.iconClass, "shrink-0"]} />
+              <span>{social.label}</span>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="col-span-2 flex flex-col gap-6">
+        <ResumeSection title="About" icon="i-lucide-user">
+          I am driven by a love for continuous exploration and learning,
+          creating captivating user experiences, solving problems, and writing
+          clean and efficient code.
+        </ResumeSection>
+
+        <ResumeSection title="Work" icon="i-lucide-briefcase">
+          <div class="flex flex-col gap-3">
+            {
+              jobs.map((job) => (
+                <div>
+                  <h3>
+                    {job.position} at {job.company}
+                  </h3>
+
+                  <p class="text-xs text-gray-500">{job.date.join(" - ")}</p>
+
+                  <ul>
+                    {job.achievements.map((achievement) => (
+                      <li>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+        </ResumeSection>
+
+        <ResumeSection title="Education" icon="i-lucide-graduation-cap">
+          <h3>Bachelor of Computer Science, Tyumen State University</h3>
+          <p class="text-xs text-gray-500">September 2016 - July 2020</p>
+        </ResumeSection>
+
+        <ResumeSection
+          title="Courses and certificates"
+          icon="i-lucide-badge-check"
+        >
+          <div class="flex flex-col gap-3">
+            {
+              courses.map((course) => (
+                <div>
+                  <h3>{course.title}</h3>
+                  <p class="text-xs text-gray-500">{course.date}</p>
+                </div>
+              ))
+            }
+          </div>
+        </ResumeSection>
+
+        <ResumeSection title="Projects" icon="i-lucide-lightbulb">
+          <div class="flex flex-col gap-3">
+            {
+              projects.map((project) => (
+                <div>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-baseline gap-1 no-underline"
+                  >
+                    <h3>{project.title}</h3>
+                    <span class="i-lucide-link h-3 w-3" />
+                  </a>
+
+                  <p>{project.description}</p>
+
+                  <p class="text-xs text-gray-500">{project.stack}</p>
+                </div>
+              ))
+            }
+          </div>
+        </ResumeSection>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <ResumeSection title="Skills" icon="i-lucide-wrench">
+          <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+          </ul>
+        </ResumeSection>
+
+        <ResumeSection title="Languages" icon="i-lucide-globe">
+          <ul>
+            {languages.map((language) => <li>{language}</li>)}
+          </ul>
+        </ResumeSection>
+      </div>
+    </main>
+  </body>
+</html>
