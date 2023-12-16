@@ -1,11 +1,15 @@
 ---
+import CinesharebotImage from "@/assets/images/cinesharebot.png";
+import EmojisearchImage from "@/assets/images/emojisearch.png";
 import Card from "@/components/card.astro";
 import SectionContainer from "@/components/section-container.astro";
 import { halfArray } from "@/lib/utils";
+import { Picture } from "astro:assets";
 
 const projects = [
   {
     name: "emojisearch.fun",
+    image: EmojisearchImage,
     href: "https://emojisearch.fun",
     description: "AI-powered emoji search",
     stack: [
@@ -38,9 +42,9 @@ const projects = [
   },
   {
     name: "t.me/cinesharebot",
+    image: CinesharebotImage,
     href: "https://t.me/cinesharebot",
-    description:
-      "Telegram bot for searching and sharing movies and TV shows in any chat",
+    description: "Telegram bot for searching and sharing movie posters",
     stack: [
       {
         name: "TypeScript",
@@ -64,6 +68,13 @@ const projects = [
         <div class="flex flex-col gap-4">
           {half.map((x) => (
             <Card>
+              <Picture
+                src={x.image}
+                formats={["avif", "webp"]}
+                alt="Screenshot of the project"
+                slot="image"
+              />
+
               <a
                 href={x.href}
                 target="_blank"

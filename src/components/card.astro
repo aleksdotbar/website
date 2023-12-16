@@ -3,9 +3,10 @@ import Spotlight from "@/components/spotlight";
 ---
 
 <Spotlight>
-  <div
-    class="space-y-2 overflow-hidden rounded-lg border border-gray-200/10 p-4 sm:p-5"
-  >
-    <slot />
+  <div class="overflow-hidden rounded-lg border border-gray-200/10">
+    <slot name="image" />
+    <div class="space-y-2 p-4">
+      <slot />
+    </div>
   </div>
 </Spotlight>
