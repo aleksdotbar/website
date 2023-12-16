@@ -32,7 +32,7 @@ export default <Config>{
   },
   plugins: [
     iconsPlugin({
-      collections: getIconCollections(["lucide"]),
+      collections: getIconCollections(["lucide", "logos"]),
     }),
     typography,
   ],

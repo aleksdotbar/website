@@ -6,14 +6,53 @@ import { halfArray } from "@/lib/utils";
 const projects = [
   {
     name: "emojisearch.fun",
-    description: "AI-powered emoji search",
     href: "https://emojisearch.fun",
+    description: "AI-powered emoji search",
+    stack: [
+      {
+        name: "TypeScript",
+        href: "https://www.typescriptlang.org",
+        icon: "i-logos-typescript-icon h-4 w-4",
+      },
+      {
+        name: "Vue.js",
+        href: "https://vuejs.org",
+        icon: "i-logos-vue h-4 w-4",
+      },
+      {
+        name: "Nuxt",
+        href: "https://nuxt.com",
+        icon: "i-logos-nuxt-icon h-5 w-5",
+      },
+      {
+        name: "Tailwind CSS",
+        href: "https://tailwindcss.com",
+        icon: "i-logos-tailwindcss-icon h-5 w-5",
+      },
+      {
+        name: "Redis (Vercel KV)",
+        href: "https://vercel.com/docs/storage/vercel-kv",
+        icon: "i-logos-redis h-5 w-5",
+      },
+    ],
   },
   {
     name: "t.me/cinesharebot",
+    href: "https://t.me/cinesharebot",
     description:
       "Telegram bot for searching and sharing movies and TV shows in any chat",
-    href: "https://t.me/cinesharebot",
+    stack: [
+      {
+        name: "TypeScript",
+        href: "https://www.typescriptlang.org",
+        icon: "i-logos-typescript-icon h-4 w-4",
+      },
+      {
+        name: "Bun",
+        href: "https://bun.sh",
+        icon: "i-logos-bun h-5 w-5",
+      },
+    ],
   },
 ];
 ---
@@ -24,13 +63,31 @@ const projects = [
       halfArray(projects).map((half) => (
         <div class="flex flex-col gap-4">
           {half.map((x) => (
-            <a href={x.href} target="_blank">
-              <Card>
+            <Card>
+              <a
+                href={x.href}
+                target="_blank"
+                class="inline-flex items-center gap-2"
+              >
                 <h3 class="text-lg font-semibold">{x.name}</h3>
+                <span class="i-lucide-external-link h-4 w-4" />
+              </a>
 
-                <div class="text-sm text-gray-300">{x.description}</div>
-              </Card>
-            </a>
+              <div class="text-sm text-gray-300">{x.description}</div>
+
+              <div class="flex items-center gap-3">
+                {x.stack.map((item) => (
+                  <a
+                    href={item.href}
+                    title={item.name}
+                    target="_blank"
+                    class="flex items-center"
+                  >
+                    <span class={item.icon} />
+                  </a>
+                ))}
+              </div>
+            </Card>
           ))}
         </div>
       ))
