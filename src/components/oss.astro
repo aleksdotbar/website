@@ -1,10 +1,15 @@
 ---
 import SectionContainer from "@/components/section-container.astro";
 import Card from "@/components/card.astro";
-import { getOSSData } from "@/lib/github";
 import { halfArray } from "@/lib/utils";
 
-const { repositories } = await getOSSData();
+const repositories = [
+  {
+    name: "nuxt-vercel-analytics",
+    description: "Vercel Analytics integration for Nuxt",
+    url: "https://npmjs.com/package/nuxt-vercel-analytics",
+  },
+];
 ---
 
 <SectionContainer title="Open source" id="oss">
@@ -18,10 +23,9 @@ const { repositories } = await getOSSData();
                 <Card>
                   <div class="flex items-center justify-between gap-3">
                     <a
-                      href={`https://npmjs.com/package/${x.name}`}
+                      href={x.url}
                       target="_blank"
                       class="inline-flex items-center gap-2"
-                      title="View on npm"
                     >
                       <h3 class="truncate text-lg font-semibold">{x.name}</h3>
                       <span class="i-lucide-external-link h-4 w-4" />
