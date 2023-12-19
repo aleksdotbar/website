@@ -34,6 +34,7 @@ const handler = async () => {
 
 export const config = {
   runtime: "edge",
+  regions: ["pdx1"],
 };
 
 export default handler;
