@@ -4,7 +4,7 @@ type ResponseData = {
       repositories: {
         nodes: {
           name: string;
-          description: string;
+          description: string | null;
           url: string;
           stargazerCount: number;
         }[];
@@ -13,7 +13,7 @@ type ResponseData = {
         pullRequestContributionsByRepository: {
           repository: {
             nameWithOwner: string;
-            description: string;
+            description: string | null;
             url: string;
             visibility: "PUBLIC" | "PRIVATE";
             owner: {
