@@ -66,12 +66,11 @@ const jobs = [
   },
   {
     company: "Rosneft",
-    position: "Software Engineer",
+    position: "Frontend Engineer",
     date: ["February 2020", "January 2021"],
     achievements: [
       "Developed an immersive virtual tour of the company's building using JavaScript, Pannellum and Bootstrap, enhancing the online visitor experience and showcasing the physical infrastructure.",
       "Collaborated on the creation of an internal process automation tool, streamlining routine tasks and reducing manual effort across departments.",
-      "Automated workflows for users from various departments, resulting in improved operational efficiency and reduced turnaround times.",
     ],
   },
 ];
@@ -162,11 +161,12 @@ const projects = [
     </a>
 
     <main
-      class="prose prose-sm mx-auto grid max-w-[900px] grid-cols-1 gap-x-2 gap-y-5 rounded bg-gray-50 prose-headings:m-0 prose-h3:text-base prose-p:m-0 prose-ul:mb-0 print:grid-cols-3 print:bg-white print:p-0 print:shadow-none md:grid-cols-3 md:p-10 md:shadow"
+      class="prose prose-sm mx-auto grid max-w-[900px] grid-cols-1 gap-x-2 gap-y-5 rounded bg-gray-50 prose-headings:m-0 prose-h3:text-base prose-ul:mb-0 print:grid-cols-3 print:bg-white print:p-0 print:shadow-none md:grid-cols-3 md:p-10 md:shadow"
     >
       <div class="col-span-2">
         <h1>Alexander Barkhatov</h1>
-        <p>Software Engineer with over 4 years of experience</p>
+        <div>Frontend Engineer with over 4 years of experience</div>
+        <div>Specializing in TypeScript, React, and Vue.js</div>
       </div>
 
       <div class="flex flex-col gap-1">
@@ -187,9 +187,9 @@ const projects = [
 
       <div class="col-span-2 flex flex-col gap-6">
         <ResumeSection title="About" icon="i-lucide-user">
-          I am driven by a love for continuous exploration and learning,
-          creating captivating user experiences, solving problems, and writing
-          clean and efficient code.
+          I am a software engineer passionate about continuous exploration and
+          learning. I enjoy creating captivating user experiences, solving
+          problems, and writing clean and efficient code.
         </ResumeSection>
 
         <ResumeSection title="Work" icon="i-lucide-briefcase">
@@ -201,7 +201,9 @@ const projects = [
                     {job.position} at {job.company}
                   </h3>
 
-                  <p class="text-xs text-gray-500">{job.date.join(" - ")}</p>
+                  <div class="text-xs text-gray-500">
+                    {job.date.join(" - ")}
+                  </div>
 
                   <ul>
                     {job.achievements.map((achievement) => (
@@ -216,7 +218,7 @@ const projects = [
 
         <ResumeSection title="Education" icon="i-lucide-graduation-cap">
           <h3>Bachelor of Computer Science, Industrial University of Tyumen</h3>
-          <p class="text-xs text-gray-500">September 2016 - July 2020</p>
+          <div class="text-xs text-gray-500">September 2016 - July 2020</div>
         </ResumeSection>
 
         <ResumeSection
@@ -228,7 +230,7 @@ const projects = [
               courses.map((course) => (
                 <div>
                   <h3>{course.title}</h3>
-                  <p class="text-xs text-gray-500">{course.date}</p>
+                  <div class="text-xs text-gray-500">{course.date}</div>
                 </div>
               ))
             }
@@ -250,9 +252,9 @@ const projects = [
                     <span class="i-lucide-external-link h-3 w-3" />
                   </a>
 
-                  <p>{project.description}</p>
+                  <div>{project.description}</div>
 
-                  <p class="text-xs text-gray-500">{project.stack}</p>
+                  <div class="text-xs text-gray-500">{project.stack}</div>
                 </div>
               ))
             }
