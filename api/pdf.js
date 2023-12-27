@@ -1,7 +1,12 @@
 const URL = process.env.BROWSERLESS_URL;
 const TOKEN = process.env.BROWSERLESS_TOKEN;
 
-const handler = async () => {
+export const config = {
+  runtime: "edge",
+  regions: ["pdx1"],
+};
+
+export default async () => {
   const pdf = await fetch(`${URL}/pdf?token=${TOKEN}`, {
     method: "POST",
     headers: {
@@ -27,14 +32,7 @@ const handler = async () => {
     status: 200,
     headers: {
       "Content-Type": "application/pdf",
-      "Cache-Control": "public, max-age=31536000, immutable",
+      "Cache-Control": "public, max-age=0, s-maxage=2678400",
     },
   });
 };
-
-export const config = {
-  runtime: "edge",
-  regions: ["pdx1"],
-};
-
-export default handler;
