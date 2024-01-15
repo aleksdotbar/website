@@ -1,5 +1,11 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 
+const promiseDelay = <T,>(promise: Promise<T>, delay: number) =>
+  Promise.all([
+    promise,
+    new Promise((resolve) => setTimeout(resolve, delay)),
+  ]).then(([value]) => value);
+
 const download = (blob: Blob, filename: string) => {
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
@@ -12,13 +18,17 @@ const download = (blob: Blob, filename: string) => {
 export default component$(() => {
   const isDownloading = useSignal(false);
 
-  const handleClick = $(async (e: PointerEvent) => {
+  const handleClick = $(async () => {
     if (isDownloading.value) return;
 
     isDownloading.value = true;
 
     try {
-      const blob = await fetch("/api/pdf").then((res) => res.blob());
+      const blob = await promiseDelay(
+        fetch("/api/pdf").then((res) => res.blob()),
+        500,
+      );
+
       download(blob, "Resume - Alexander Barkhatov.pdf");
     } finally {
       isDownloading.value = false;
@@ -109,7 +119,7 @@ export default component$(() => {
         <span class="i-lucide-download"></span>
       )}
       <span class="hidden md:block">
-        {isDownloading.value ? "Bip bop..." : "Download PDF"}
+        {isDownloading.value ? "Downloading..." : "Download PDF"}
       </span>
     </a>
   );
