@@ -39,7 +39,7 @@ export default component$(() => {
     <a
       href="/api/pdf"
       download="Resume - Alexander Barkhatov.pdf"
-      class="fixed right-5 top-5 flex w-8 items-center gap-2 rounded bg-gray-800 px-2 py-2 text-white shadow-lg transition hover:bg-gray-700 aria-[disabled]:cursor-not-allowed aria-[disabled]:bg-gray-500 aria-[disabled]:hover:bg-gray-500 print:hidden md:w-44 md:px-4"
+      class="fixed right-4 top-4 flex w-8 items-center gap-2 rounded bg-gray-800 px-2 py-2 text-white shadow-lg transition hover:bg-gray-700 aria-[disabled]:cursor-not-allowed aria-[disabled]:bg-gray-500 aria-[disabled]:hover:bg-gray-500 print:hidden md:w-44 md:px-4"
       aria-disabled={isDownloading.value ? "true" : undefined}
       onClick$={handleClick}
       preventdefault:click
