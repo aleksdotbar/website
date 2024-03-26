@@ -17,7 +17,7 @@ export default async () => {
       options: {
         format: "A4",
         printBackground: true,
-        scale: 0.95,
+        scale: 1,
         margin: {
           top: "30px",
           right: "30px",
