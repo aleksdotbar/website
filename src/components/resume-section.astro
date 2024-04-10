@@ -1,28 +1,24 @@
 ---
 type Props = {
   title: string;
-  icon?: string;
+  icon: string;
 };
 
 const { title, icon } = Astro.props;
 ---
 
-<section class="flex items-baseline gap-2">
+<section>
   {
-    (Astro.slots.has("icon") || icon) && (
-      <div class="shrink-0">
-        <slot name="icon">
-          <span class:list={[icon, "h-4 w-4"]} />
-        </slot>
+    title && (
+      <div class="mb-2 flex items-center gap-2">
+        {icon && <span class:list={[icon, "h-4 w-4"]} />}
+
+        <h2>{title}</h2>
       </div>
     )
   }
 
-  <div>
-    <h2>{title}</h2>
-
-    <div class="mt-2">
-      <slot />
-    </div>
+  <div class="ml-6">
+    <slot />
   </div>
 </section>
