@@ -1,18 +1,5 @@
 ---
-const links = [
-  // {
-  //   label: "Projects",
-  //   href: "#projects",
-  // },
-  // {
-  //   label: "OSS",
-  //   href: "#oss",
-  // },
-  {
-    label: "Resume",
-    href: "/resume",
-  },
-];
+
 ---
 
 <header
@@ -27,13 +14,5 @@ const links = [
     >
       AB
     </a>
-
-    {
-      links.map((x) => (
-        <a href={x.href} class="transition hover:text-gray-200">
-          {x.label}
-        </a>
-      ))
-    }
   </nav>
 </header>
