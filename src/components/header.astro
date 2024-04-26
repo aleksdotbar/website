@@ -10,9 +10,18 @@
   >
     <a
       href="#hello"
-      class="mr-auto text-lg font-bold uppercase tracking-wider transition hover:text-gray-200"
+      class="mr-auto flex items-center gap-2 text-lg font-bold uppercase tracking-wider transition hover:text-gray-200"
     >
-      AB
+      <div
+        class="aspect-square w-8 justify-self-center overflow-hidden rounded-full border border-gray-200/10 md:justify-self-end"
+      >
+        <img
+          src="/avatar-2x.webp"
+          alt="Photo of Alexander looking at the Christmas lights"
+          class="h-full w-full object-contain object-center"
+          srcset="/avatar-1x.webp 1x, /avatar-2x.webp 2x"
+        />
+      </div>
     </a>
   </nav>
 </header>
