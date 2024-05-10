@@ -75,8 +75,10 @@ const projects = [
             <Card>
               <Picture
                 src={x.image}
+                alt={`Screenshot of the ${x.name} project`}
                 formats={["avif", "webp"]}
-                alt="Screenshot of the project"
+                widths={[590]}
+                sizes="590px"
                 slot="image"
               />
 
