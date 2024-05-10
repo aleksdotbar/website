@@ -9,6 +9,9 @@ export default defineConfig({
   output: "static",
   adapter: vercel({
     imageService: true,
+    imagesConfig: {
+      sizes: [590],
+    },
   }),
   integrations: [tailwind(), qwikdev()],
   vite: {
