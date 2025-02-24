@@ -92,19 +92,6 @@ const projects = [
               </a>
 
               <div class="text-sm text-gray-300">{x.description}</div>
-
-              <div class="flex items-center gap-3">
-                {x.stack.map((item) => (
-                  <a
-                    href={item.href}
-                    title={item.name}
-                    target="_blank"
-                    class="flex items-center"
-                  >
-                    <span class={item.icon} />
-                  </a>
-                ))}
-              </div>
             </Card>
           ))}
         </div>
